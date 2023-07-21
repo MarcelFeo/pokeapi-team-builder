@@ -16,7 +16,7 @@ class PokemonTeamsController < ApplicationController
     team_size = params[:team_size].to_i
 
     if team_size <= 0 || team_size > 6
-      render json: { error: 'O tamanho da equipe deve estar entre 1 e 6.' }, status: :unprocessable_entity
+      render json: { error: 'O tamanho da equipe deve estar entre 1 e 6.' }, status: :bad_request
     else
       team = []
       team_size.times do
@@ -29,7 +29,7 @@ class PokemonTeamsController < ApplicationController
       if pokemon_team.save
         render json: { team: team }, status: :created
       else
-        render json: { error: 'Não foi possível salvar a equipe Pokémon.' }, status: :unprocessable_entity
+        render json: { error: 'Não foi possível salvar a equipe Pokémon.' }, status: :bad_request
       end
     end
   end
