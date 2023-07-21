@@ -16,7 +16,7 @@ class PokemonTeamsController < ApplicationController
       pokemon_team = PokemonTeam.new(pokemon: team.join(','), team_size: team_size)
 
       if pokemon_team.save
-        render json: pokemon_team, status: :created
+        render json: { team: team }, status: :created
       else
         render json: { error: 'Não foi possível salvar a equipe Pokémon.' }, status: :unprocessable_entity
       end
