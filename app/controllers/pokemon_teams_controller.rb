@@ -1,5 +1,16 @@
 class PokemonTeamsController < ApplicationController
   require 'httparty'
+  skip_before_action :verify_authenticity_token, only: [:create]
+
+  def index
+    pokemon_teams = PokemonTeam.all
+    render json: pokemon_teams
+  end
+
+  def show
+    pokemon_team = PokemonTeam.find(params[:id])
+    render json: pokemon_team
+  end
 
   def create
     team_size = params[:team_size].to_i
