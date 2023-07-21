@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="pokeball-PhotoRoom.png-PhotoRoom.png" alt="Descrição da imagem">
+  <img src="pokeball-PhotoRoom.png-PhotoRoom (1).png" alt="Descrição da imagem">
 </p>
 
 
